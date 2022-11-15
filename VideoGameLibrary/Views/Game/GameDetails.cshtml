@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Detail Page";
+    //var game = ViewBag.GameListModel;
+    @model GameDetailsViewModel
+}
+
+<div class="text-center">
+    <h1 class="display-4">Details</h1>
+    <p>Choosen Game: @Model.Title</p>
+    <br />
+    <img src="@Model.ImageUrl"/>
+    <br />
+    <div>
+            <label>Game Id: </label> @Model.Id
+            <br/>
+            <label>Platform: </label> @Model.Platform
+            <br/>
+            <label>Genre: </label> @Model.Genre
+            <br/>
+            <label>Rating: </label> @Model.Rating
+            <br/>
+            <label>Year: </label> @Model.Year
+            <br/>
+                @if (string.IsNullOrEmpty(Model.LoanedTo))
+                {
+                    
+                }else
+                {
+                    <label>Loaned by: </label> @Model.LoanedTo
+                    <br/>
+                    <label>Date Taken: </label> @Model.LoanDate
+                    <br/>
+                }
+        </div>
+
+    @if (string.IsNullOrEmpty(Model.LoanedTo))
+    {
+        <h1>Borrow</h1>
+      <form class="text-center" action="/Game/GameDetails" method="POST">
+         <input name="id" type="text" placeholder="Game Id:" value=@Model.Id readonly/>
+         <br />
+         <input name="name" type="text" placeholder="Borrow's Name:"/>
+         <br />
+         <input name="submit" type="submit" value="Submit"/>
+        </form>
+    }
+    else
+    {
+        <h1>Return</h1>
+      <form class="text-center" action="/Game/GameDetails" method="POST">
+         <input name="id" type="text" placeholder="Game Id:" value=@Model.Id readonly/>
+         <br />
+         <input name="name" type="text" placeholder="Return Name:"/>
+         <br />
+         <input name="submit" type="submit" value="Submit"/>
+     </form>
+    }
+
+    <form class="text-center" action="/Game/GameEdit" method="POST">
+        <input name="id" type="hidden" placeholder="Game Id:" value=@Model.Id readonly />
+        <input name="submit" type="submit" value="Edit">
+    </form>
+
+     
+</div>

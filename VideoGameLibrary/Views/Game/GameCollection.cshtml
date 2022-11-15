@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Collection Page";
+    //var viewModel = ViewBag.GameListModel;
+    @model GameViewModel
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">Collection</h1>
+    <p>Total Games in Collection: @Model.Games.Count</p>
+    <label>Search: </label>
+    <form class="text-center" action="/Game/GameSearch" method="POST"> 
+        <input name="titleVal" type="text" placeholder="Title">
+        <br />
+        <input name="genreVal" type="text" placeholder="Genre Filter"/>
+        <br />
+        <input name="platVal" type="text" placeholder="Platform Filter"/>
+        <br />
+        <input name="esrbVal" type="text" placeholder="ESRB Filter"/>
+        <br />
+        <input type="submit" value="Submit" >
+    </form>
+    @foreach (var game in Model.Games) {
+    <div>
+        <img src="@game.ImageUrl"/>
+        <br>
+        <h2><a href="GameDetails/@game.Id">@game.Title</a></h2>
+        <div>
+            <label>Game Id: </label> @game.Id
+            <br/>
+            <label>Platform: </label> @game.Platform
+            <br/>
+            <label>Genre: </label> @game.Genre
+            <br/>
+            <label>Rating: </label> @game.Rating
+            <br/>
+            <label>Year: </label> @game.Year
+            <br/>
+                @if (string.IsNullOrEmpty(game.LoanedTo))
+                {
+                    
+                }else
+                {
+                    <label>Loaned by: </label> @game.LoanedTo
+                    <br/>
+                    <label>Date Taken: </label> @game.LoanDate
+                    <br/>
+                }
+        </div>
+    </div>
+}
+</div>

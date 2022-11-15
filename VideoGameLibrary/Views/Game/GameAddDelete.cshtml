@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "AddDel Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Add or Delete</h1>
+
+    <label>Add Game:</label>
+    <form class="text-center" action="/Game/GameAddDelete" method="POST">
+        <input name="imageURL" type="text" placeholder="ImageURL"/>
+        <input name="Title" type="text" placeholder="Title"/>
+        <input name="Rating" type="text" placeholder="ESRB"/>
+        <input name="Platform" type="text" placeholder="Platform(s)"/>
+        <input name="Genre" type="text" placeholder="Genre"/>
+        <input name="Year" type="text" placeholder="Year"/>
+        <input type="submit" value="Add"/>
+    </form>
+
+    <label>Delete Game:</label>
+    <form class="text-center" action="/Game/GameAddDelete" method="POST">
+        <input name="Id" placeholder="ID Value" type="text"/>
+        <input type="submit" value="Delete"/>
+    </form>
+</div>
