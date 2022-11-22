@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoGameLibrary", "VideoGa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoGameDAL", "VideoGameDAL\VideoGameDAL.csproj", "{5512F688-553A-46AE-887D-5C2881E2BC95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj", "{B3FECB14-377D-48B3-9313-AE1EF66BD5E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameLib", "Login\GameLib.csproj", "{B3FECB14-377D-48B3-9313-AE1EF66BD5E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
