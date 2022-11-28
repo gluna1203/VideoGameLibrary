@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NewGameLib.Models;
 using System.Diagnostics;
+using NewGameLib.Models;
 
-namespace NewGameLib.Controllers
+namespace VideoGameLibrary.Controllers
 {
     public class HomeController : Controller
     {

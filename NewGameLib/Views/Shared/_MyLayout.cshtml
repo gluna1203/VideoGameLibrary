@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			@ViewData["Title"] - Video Game Library
+		</title>
+		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+		<link rel="stylesheet" href="~/NewGameLib.styles.css" asp-append-version="true" />
+	</head>
+	<body>
+		<header>
+			<nav >
+				<ul >
+					<li><a class="active" href="/">Home</a></li>
+					<li><a href="/Game/GameCollection">Game Collection</a></li>
+					<li><a href="/Game/GameAddDelete">Add or Delete</a></li>
+				</ul>
+			</nav>
+			<h1 class="CompanyName">Borrow Games</h1>
+			<img class="logo" src="https://media2.giphy.com/media/l3vR16pONsV8cKkWk/giphy.gif"/>
+		</header>
+		<section>
+			@RenderBody()
+		</section>
+		<footer class="copyright">
+			&copy;@DateTime.Now.Year.ToString() Gabriel Corp
+		</footer>
+	</body>
+</html>

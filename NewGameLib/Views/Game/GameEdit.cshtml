@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model GameDetailsViewModel
+    ViewData["Title"] = "Collection Page";
+}
+<div class="text-center">
+    <label>Edit Game:</label>
+    <form class="text-center" action="/Game/GameEdited" method="POST">
+        <input name="OriginalTitle" type="text" placeholder="Original Title" value="@Model.Title" readonly />
+        <br />
+        <input name="imageURL" type="text" placeholder="ImageURL" value="@Model.ImageUrl" />
+        <br />
+        <input name="Title" type="text" placeholder="Title" value="@Model.Title" />
+        <br />
+        <input name="Rating" type="text" placeholder="ESRB" value="@Model.Rating" />
+        <br />
+        <input name="Platform" type="text" placeholder="Platform(s)" value="@Model.Platform" />
+        <br />
+        <input name="Genre" type="text" placeholder="Genre" value="@Model.Genre" />
+        <br />
+        <input name="Year" type="number" placeholder="Year" value="@Model.Year" />
+        <br />
+        <input type="submit" value="Submit" />
+    </form>
+</div>
