@@ -97,6 +97,18 @@ namespace NewGameLib.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+
+            [Required]
+            [Display(Name = "Month")]
+            public int Month { get; set; }
+
+            [Required]
+            [Display(Name = "Day")]
+            public int Day { get; set; }
+
+            [Required]
+            [Display(Name = "Year")]
+            public int Year { get; set; }
         }
 
 
