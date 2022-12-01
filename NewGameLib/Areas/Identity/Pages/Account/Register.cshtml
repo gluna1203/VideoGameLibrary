@@ -29,7 +29,7 @@
             </div>
             <div class="dropdown-control"  >
 
-            <div class="dropdown">
+            <div class="dropdown" id="Month">
                     @{
                         List<SelectListItem> listMonths = new List<SelectListItem>();
                         listMonths.Add(new SelectListItem
@@ -97,7 +97,7 @@
                 @Html.DropDownList("yourDropName", listMonths, new { @class = "form-control" })
 
             </div>
-            <div>
+            <div class="dropdown" id="Day">
                  @{
                         List<SelectListItem> listDays = new List<SelectListItem>();
                         listDays.Add(new SelectListItem
@@ -259,7 +259,7 @@
 
                     @Html.DropDownList("yourDropName", listDays, new { @class = "form-control" })
             </div>
-            <div>
+            <div  class="dropdown" id="Year" >
                  @{
                         List<SelectListItem> listYear = new List<SelectListItem>();
                         listYear.Add(new SelectListItem
